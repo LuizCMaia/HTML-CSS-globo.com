@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .main-news {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .main-image-wrapper {
+            position: relative;
+            height: 450px;
+        }
+
+        .main-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .main-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+        }
+
+        .main-title {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            z-index: 2;
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        .main-highlights {
+            background-color: #c31b11;
+            padding: 20px 25px;
+        }
+
+        .main-highlights ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .main-highlights li {
+            color: #ffffff;
+            flex: 1;
+            font-size: 1rem;
+            font-weight: bold;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .main-highlights li::before {
+            content: '•';
+            color: rgba(255, 255, 255, 0.6);
+            position: absolute;
+            left: 0;
+            top: -2px;
+            font-size: 1.2rem;
+        }
+
+        .divider {
+            border: none;
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 30px 0;
+        }
+
+        .secondary-news {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .news-card h3 {
+            color: #c31b11;
+            font-size: 1.35rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .news-card ul {
+            list-style: none;
+        }
+
+        .news-card li {
+            color: #444444;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .news-card li::before {
+            content: '•';
+            color: #c31b11;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-highlights ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .secondary-news {
+                grid-template-columns: 1fr;
+            }
+
+            .main-title {
+                font-size: 1.8rem;
+            }
+            
+            .main-image-wrapper {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="main-news">
+            <div class="main-image-wrapper">
+                <img src="imagem1.png" alt="Trump conversando">
+                <h1 class="main-title">Trump afirma que 'tudo foi destruído' no Irã e promete 3ª onda de ataques</h1>
+            </div>
+            
+            <div class="main-highlights">
+                <ul>
+                    <li>Israel ataca reunião que definiria o novo líder do Irã, diz jornal</li>
+                    <li>Agência: estrondos são ouvidos em Dubai, Abu Dhabi e Doha; SIGA</li>
+                    <li>General do Irã ameaça centros econômicos do Oriente Médio</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="secondary-news">
+            
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?q=80&w=400&auto=format&fit=crop" alt="Multidão no Irã">
+                <h3>Multidão no Irã vai a funeral de crianças; ONU pede apuração</h3>
+                <ul>
+                    <li>Escalada nuclear pode ser fatal, diz especialista</li>
+                </ul>
+            </div>
+
+            <div class="news-card">
+                <img src="imagem1.png" alt="Trump e representante da Espanha">
+                <h3>Trump ameaça usar bases da Espanha sem autorização</h3>
+                <ul>
+                    <li>O que está por trás do conflito entre EUA e Irã?</li>
+                </ul>
+            </div>
+
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1508614999368-9260051292e5?q=80&w=400&auto=format&fit=crop" alt="Drone militar">
+                <h3>Valores da guerra: drones de US$ 20 mil x mísseis de US$ 4 mi</h3>
+                <ul>
+                    <li>Emirados criam corredor de segurança para voos</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
